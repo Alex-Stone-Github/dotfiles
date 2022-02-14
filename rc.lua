@@ -242,7 +242,6 @@ globalkeys = gears.table.join(
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
-
     awful.key({ modkey,           }, "j",
         function ()
             awful.client.focus.byidx( 1)
@@ -577,4 +576,5 @@ beautiful.useless_gap = 5
 
 -- Autostart
 awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("python3 /home/alex/.config/awesome/wallpaper.py")
 awful.spawn.with_shell("picom")
