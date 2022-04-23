@@ -9,19 +9,16 @@ retab
 
 set smartindent
 
-nnoremap <S-f> :tabn<CR> 
-
 nnoremap <S-j> <C-w>j 
 nnoremap <S-k> <C-w>k 
 nnoremap <S-h> <C-w>h 
 nnoremap <S-l> <C-w>l 
 
-colorscheme gruvbox
-set nowrap
-set background=dark
+set wrap
 
-" Autocomplete
-inoremap <TAB> <C-n>
+" colorscheme
+colo gruvbox
+set background=dark
 
 " Plugins and stuff
 call plug#begin()
@@ -29,8 +26,10 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 nnoremap m :FZF<CR>
-" YouCompleteMe
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Autocomplete
+" inoremap <TAB> <C-n>
 call plug#end()
 
 
