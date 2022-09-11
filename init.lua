@@ -61,6 +61,9 @@ map('n', '<A-m>', ":Neotree toggle<CR>")
 -- terminal navigation
 map('n', '<S-t>', ":term<CR>")
 
+-- autocomplete with emmet
+map('i', ';', "<ctr-y>,")
+
 --
 -- Plugins
 --
@@ -102,6 +105,7 @@ packer.startup(function()
             'MunifTanjim/nui.nvim'
         }
     }
+    use 'mattn/emmet-vim'
     end
 )
 -- setup
