@@ -14,6 +14,7 @@ o.updatetime = 200
 o.wrap = false;
 o.clipboard = 'unnamedplus'
 o.history = 50
+vim.opt.mouse = 'a';
 
 -- nice colors / gui
 o.termguicolors = true
@@ -35,7 +36,7 @@ o.ignorecase = true
 o.smartcase = true
 
 -- color scheme
-vim.cmd("colo darcula")
+vim.cmd("colo gruvbox")
 
 
 --
@@ -55,6 +56,7 @@ map('n', '<S-l>', "<C-w>l")
 
 -- file navigation
 map('n', '<S-m>', ":Telescope find_files prompt_prefix=🔍<CR>")
+map('n', '<A-m>', ":Neotree toggle<CR>")
 
 -- terminal navigation
 map('n', '<S-t>', ":term<CR>")
@@ -81,9 +83,25 @@ packer.init({
 packer.startup(function()
     local use = use
     -- add you plugins here like:
+    --  fuzzy navigation
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    -- autocomplete
+    use {
+        'neoclide/coc.nvim',
+        branch = 'release'
+	}
+    -- file explorer
+    use {
+        'nvim-neo-tree/neo-tree.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'kyazdani42/nvim-web-devicons',
+            'MunifTanjim/nui.nvim'
+        }
+    }
     end
 )
+-- setup
