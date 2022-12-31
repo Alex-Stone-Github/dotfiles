@@ -21,3 +21,6 @@ lua for some weird reason.
 This you can pretty much just slap into your awesome config. The wallpapers
 .py file can be useful for changing wallpapers with nitrogen. I forget
 most of what the other plugins for this do.
+### Note
+For this you will need the AwesomeWM installed, and also you will need 
+the nitrogen wallpaper setter.
