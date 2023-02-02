@@ -19,7 +19,6 @@ vim.opt.mouse = 'a';
 -- nice colors / gui
 o.termguicolors = true
 o.number = true
-o.relativenumber = true
 o.signcolumn = 'yes'
 o.cursorline = true
 
@@ -102,6 +101,7 @@ packer.startup(function()
             'MunifTanjim/nui.nvim'
         }
     }
+    use 'mattn/emmet-vim'
     end
 )
 -- setup
