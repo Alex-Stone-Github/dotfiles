@@ -13,11 +13,13 @@ will need these.
     * npm
     * + any analyzers for languages you want to use
 
+## Old Stuff
+---
 ### Additionals
 There is also a init.vim file that can be used, if you don't want to use 
 lua for some weird reason.
 
-## Awesome
+### Awesome
 This you can pretty much just slap into your awesome config. The wallpapers
 .py file can be useful for changing wallpapers with nitrogen. I forget
 most of what the other plugins for this do.

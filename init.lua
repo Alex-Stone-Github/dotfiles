@@ -35,7 +35,7 @@ o.ignorecase = true
 o.smartcase = true
 
 -- color scheme
-vim.cmd("colo gruvbox")
+vim.cmd("colo habamax")
 
 
 --
