@@ -21,6 +21,7 @@ o.termguicolors = true
 o.number = true
 o.signcolumn = 'yes'
 o.cursorline = true
+o.relativenumber = true
 
 -- Tabs dun dun dun
 o.expandtab = true
@@ -35,7 +36,10 @@ o.ignorecase = true
 o.smartcase = true
 
 -- color scheme
-vim.cmd("colo habamax")
+vim.cmd("colo bold")
+
+-- disable match parenthesis highlight
+g.loaded_matchparen = 1
 
 
 --
@@ -59,6 +63,10 @@ map('n', '<A-m>', ":Neotree toggle<CR>")
 
 -- terminal navigation
 map('n', '<S-t>', ":term<CR>")
+
+-- man pages
+map('n', '<S-y>', ":Man<CR>")
+
 
 --
 -- Plugins
