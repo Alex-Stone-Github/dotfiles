@@ -1,0 +1,14 @@
+# python
+[[language]]
+name = "python"
+roots = ["pyproject.toml"]
+language-server = {command = "pyright-langserver", args = ["--stdio"]}
+config = {}
+
+# rust 
+[[language]]
+name = "rust"
+[[grammar]]
+name = "rust"
+source = { git = "https://github.com/tree-sitter/tree-sitter-rust" }
+
