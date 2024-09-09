@@ -1,3 +1,0 @@
-shell:
-  program: /usr/bin/tmux
-live_config_reload: true
