@@ -8,4 +8,5 @@ Hello, these are my configuration files("dotfiles"). I am structuring this proje
 
 _All of the dependencies should be pretty self explanetory: make, git, and neovim + basics..._
 
-
+# Future
+In the future this project will include multiple components, and you will be able to install them seperately.
