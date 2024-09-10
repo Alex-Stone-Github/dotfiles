@@ -3,22 +3,39 @@
 -- ---------------
 vim.opt.number = true
 vim.opt.mouse = 'a'
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+-- Gotta love tabs
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = false -- Color Scheme
 vim.cmd [[colorscheme gruvbox]]
 
--- Gotta love tabs
-
--- Fuzzy file finder
--- vim.keymap.set('n', 'm', require('telescope.builtin').find_files, {})
+-- Keymaps
+local mapit = function(mode, key, callee)
+	vim.api.nvim_set_keymap(
+	mode, key, callee, 
+	{noremap = true, silent = true})
+end
 
 -- ------------------
 -- Plugins & Stuff --
 -- ------------------
--- This saves packer for when we reinstall
+-- Plugin PreConfig
 vim.cmd [[packadd packer.nvim]]
-return require('packer').startup(function(use)
+-- Plugin Config
+require('packer').startup(function(use)
 	use {
 		"nvim-telescope/telescope.nvim", tag= '0.1.4', requires = { {'nvim-lua/plenary.nvim'} }
 	}
+	use "nvim-treesitter/nvim-treesitter"
 	use "morhetz/gruvbox"
+	use {
+		"nvim-lualine/lualine.nvim", requires = { {"nvim-tree/nvim-web-devicons"} }
+	}
 end)
+-- Plugin inits & keymaps
+require('lualine').setup()
+teles = require("telescope.builtin")
+vim.api.nvim_set_keymap('n', 'm', ':lua teles.find_files()<cr>', {noremap=true,silent=true})
 
