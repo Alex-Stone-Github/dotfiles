@@ -7,9 +7,13 @@ vim.cmd [[colorscheme gruvbox]]
 
 -- Gotta love tabs
 
+-- Fuzzy file finder
+-- vim.keymap.set('n', 'm', require('telescope.builtin').find_files, {})
+
 -- ------------------
 -- Plugins & Stuff --
 -- ------------------
+-- This saves packer for when we reinstall
 vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	use {
@@ -17,3 +21,4 @@ return require('packer').startup(function(use)
 	}
 	use "morhetz/gruvbox"
 end)
+
