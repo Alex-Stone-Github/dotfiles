@@ -1,8 +1,8 @@
+.PHONY: install install-vim restart
 
-.PHONY: install restart
+install: install-vim install-zsh
 
-
-install: restart
+install-vim: restart
 	@echo "Installing new neovim configuration!"
 	cp ./nvim/init.lua ../nvim/init.lua
 	# Packer Install (this configuration uses packer)
@@ -10,5 +10,9 @@ install: restart
 		 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 	@echo "Successfully installed neovim configuration!"
 	@echo "Run PackerInstall command to install neovim plugins. Install releveant languages with TSInstall"
+install-zsh:
+	@echo "Installing new zsh configuration!"
+	cp ./zsh/.zshrc ~/.zshrc
+	@echo "Successfully installed zsh configuration!"
 restart:
 	rm -rf ~/.local/share/nvim/site/pack/packer/start/packer.nvim
