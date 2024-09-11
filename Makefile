@@ -4,6 +4,7 @@ install: install-vim install-zsh
 
 install-vim: restart
 	@echo "Installing new neovim configuration!"
+	mkdir ../nvim
 	cp ./nvim/init.lua ../nvim/init.lua
 	# Packer Install (this configuration uses packer)
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
