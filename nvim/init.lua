@@ -17,6 +17,10 @@ local mapit = function(mode, key, callee)
 	mode, key, callee, 
 	{noremap = true, silent = true})
 end
+mapit("n", "<s-j>", "<c-w>j");
+mapit("n", "<s-k>", "<c-w>k");
+mapit("n", "<s-h>", "<c-w>h");
+mapit("n", "<s-l>", "<c-w>l");
 
 -- ------------------
 -- Plugins & Stuff --
@@ -33,9 +37,10 @@ require('packer').startup(function(use)
 	use {
 		"nvim-lualine/lualine.nvim", requires = { {"nvim-tree/nvim-web-devicons"} }
 	}
+	use {"neoclide/coc.nvim", branch = "release"}
 end)
 -- Plugin inits & keymaps
 require('lualine').setup()
 teles = require("telescope.builtin")
-vim.api.nvim_set_keymap('n', 'm', ':lua teles.find_files()<cr>', {noremap=true,silent=true})
+mapit('n', 'm', ':lua teles.find_files()<cr>', {noremap=true,silent=true})
 
