@@ -1,6 +1,6 @@
-.PHONY: install install-vim restart
+.PHONY: install install-vim install-zsh install-alacritty restart
 
-install: install-vim install-zsh
+install: install-vim install-zsh install-alacritty
 
 install-vim: restart
 	@echo "Installing new neovim configuration!"
@@ -11,9 +11,14 @@ install-vim: restart
 		 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 	@echo "Successfully installed neovim configuration!"
 	@echo "Run PackerInstall command to install neovim plugins. Install releveant languages with TSInstall"
+restart:
+	rm -rf ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 install-zsh:
 	@echo "Installing new zsh configuration!"
 	cp ./zsh/.zshrc ~/.zshrc
 	@echo "Successfully installed zsh configuration!"
-restart:
-	rm -rf ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+install-alacritty:
+	@echo "Installing alacritty configuration!"
+	-mkdir ../alacritty
+	cp alacritty/alacritty.toml ../alacritty/
+	@echo "Successfully alacritty configuration!"
