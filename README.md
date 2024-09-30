@@ -8,13 +8,15 @@ Hello, these are my configuration files("dotfiles"). I am structuring this proje
 
 _All of the dependencies should be pretty self explanetory: make, git, and neovim + basics..._
 
+
 # Neovim
 In order to get vim up and running. Do the following
 Run inside nvim:
     - PackerInstall
     - CocInstall
+
 # Icons
 I use proto nerd font. It is bundled into this install script.
 
-# Future
-In the future this project will include multiple components, and you will be able to install them seperately.
+# Alacritty
+I use alacritty. This installs the configuration for alacritty.

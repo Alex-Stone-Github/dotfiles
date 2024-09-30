@@ -39,12 +39,15 @@ require('packer').startup(function(use)
 		"nvim-lualine/lualine.nvim", requires = { {"nvim-tree/nvim-web-devicons"} }
 	}
 	use {"neoclide/coc.nvim", branch = "release"}
-	use {"akinsho/toggleterm.nvim", tag = "*", config = function()
-		require("toggleterm").setup()
-	end}
+	use {"akinsho/toggleterm.nvim", tag = "*"}
 end)
 -- Plugin inits & keymaps
 require('lualine').setup()
+require('toggleterm').setup()
 teles = require("telescope.builtin")
-mapit('n', 'm', ':lua teles.find_files()<cr>', {noremap=true,silent=true})
+mapit('n', 'm', ':lua teles.find_files()<cr>')
+
+mapit('n', 'n', ':ToggleTerm direction=horizontal<cr>')
+mapit('t', 'n', '<C-d>')
+mapit('t', '<Esc>', '<C-\\><C-n>')
 
