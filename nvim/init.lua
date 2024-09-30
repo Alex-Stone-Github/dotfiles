@@ -1,3 +1,4 @@
+
 -- ---------------
 -- Basic Config --
 -- ---------------
@@ -38,6 +39,9 @@ require('packer').startup(function(use)
 		"nvim-lualine/lualine.nvim", requires = { {"nvim-tree/nvim-web-devicons"} }
 	}
 	use {"neoclide/coc.nvim", branch = "release"}
+	use {"akinsho/toggleterm.nvim", tag = "*", config = function()
+		require("toggleterm").setup()
+	end}
 end)
 -- Plugin inits & keymaps
 require('lualine').setup()

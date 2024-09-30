@@ -2,3 +2,5 @@
 opacity = 0.8
 [shell]
 program = "zsh"
+[font]
+normal = {family = "0xProto Nerd Font", style = "Regular"}

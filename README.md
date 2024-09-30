@@ -14,7 +14,7 @@ Run inside nvim:
     - PackerInstall
     - CocInstall
 # Icons
-If you want icons, use a nerd font in your terminal. This will be added in the future.
+I use proto nerd font. It is bundled into this install script.
 
 # Future
 In the future this project will include multiple components, and you will be able to install them seperately.
