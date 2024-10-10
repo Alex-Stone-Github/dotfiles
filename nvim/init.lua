@@ -46,8 +46,5 @@ require('lualine').setup()
 require('toggleterm').setup()
 teles = require("telescope.builtin")
 mapit('n', 'm', ':lua teles.find_files()<cr>')
-
-mapit('n', 'n', ':ToggleTerm direction=horizontal<cr>')
-mapit('t', 'n', '<C-d>')
-mapit('t', '<Esc>', '<C-\\><C-n>')
+mapit('n', ',', ':ToggleTerm direction=float<cr>')
 
