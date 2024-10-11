@@ -1,4 +1,3 @@
-
 -- ---------------
 -- Basic Config --
 -- ---------------
@@ -22,29 +21,44 @@ mapit("n", "<s-k>", "<c-w>k");
 mapit("n", "<s-h>", "<c-w>h");
 mapit("n", "<s-l>", "<c-w>l");
 
--- ------------------
--- Plugins & Stuff --
--- ------------------
--- Plugin PreConfig
-vim.cmd [[packadd packer.nvim]]
--- Plugin Config
-require('packer').startup(function(use)
-	use {
-		"nvim-telescope/telescope.nvim", tag= '0.1.4', requires = { {'nvim-lua/plenary.nvim'} }
-	}
-	use "nvim-treesitter/nvim-treesitter"
-	use "morhetz/gruvbox"
-	use {
-		"nvim-lualine/lualine.nvim", requires = { {"nvim-tree/nvim-web-devicons"} }
-	}
-	use {"neoclide/coc.nvim", branch = "release"}
-	use {"akinsho/toggleterm.nvim", tag = "*"}
-end)
--- Plugin inits & keymaps
-require('lualine').setup()
-require('toggleterm').setup()
+
+-- -----
+-- Plugins and stuff
+-- -----
+-- install lazyvim if not already installed
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local outpath = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{"Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{out, "WarningMsg" },
+			{"\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- actual plugin list
+require("lazy").setup({
+	spec = {
+		{"ellisonleao/gruvbox.nvim"},
+		{"nvim-telescope/telescope.nvim"},
+		{"akinsho/toggleterm.nvim", config = true},
+		{"neoclide/coc.nvim", branch="release"},
+		{"nvim-lualine/lualine.nvim",
+			dependencies = {"nvim-tree/nvim-web-devicons"},
+		},
+	},
+	install = { colorscheme = { "gruvbox" } },
+	checker = { enabled = true },
+})
+
+-- plugin config
+mapit('n', ',', ':ToggleTerm direction=float<cr>')
 teles = require("telescope.builtin")
 mapit('n', 'm', ':lua teles.find_files()<cr>')
-mapit('n', ',', ':ToggleTerm direction=float<cr>')
-
-vim.cmd [[colorscheme gruvbox]]
+vim.cmd [[colo gruvbox]]

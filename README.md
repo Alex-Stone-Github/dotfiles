@@ -12,7 +12,6 @@ _All of the dependencies should be pretty self explanetory: make, git, and neovi
 # Neovim
 In order to get vim up and running. Do the following
 Run inside nvim:
-    - PackerInstall
     - CocInstall
 
 # Icons
