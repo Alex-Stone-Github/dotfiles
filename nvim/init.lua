@@ -10,7 +10,6 @@ vim.opt.smartcase = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = false -- Color Scheme
-vim.cmd [[colorscheme gruvbox]]
 
 -- Keymaps
 local mapit = function(mode, key, callee)
@@ -48,3 +47,4 @@ teles = require("telescope.builtin")
 mapit('n', 'm', ':lua teles.find_files()<cr>')
 mapit('n', ',', ':ToggleTerm direction=float<cr>')
 
+vim.cmd [[colorscheme gruvbox]]
