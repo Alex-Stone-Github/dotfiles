@@ -62,3 +62,6 @@ mapit('n', ',', ':ToggleTerm direction=float<cr>')
 teles = require("telescope.builtin")
 mapit('n', 'm', ':lua teles.find_files()<cr>')
 vim.cmd [[colo gruvbox]]
+require("lualine").setup{
+	options = { theme = 'gruvbox' }
+}
