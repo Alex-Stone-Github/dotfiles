@@ -1,6 +1,7 @@
 -- ---------------
 -- Basic Config --
 -- ---------------
+vim.g.mapleader = ';';
 vim.opt.number = true
 vim.opt.mouse = 'a'
 vim.opt.ignorecase = true
@@ -58,9 +59,9 @@ require("lazy").setup({
 })
 
 -- plugin config
-mapit('n', 'm', ':ToggleTerm direction=horizontal<cr>')
+mapit('n', '<leader>t', ':ToggleTerm direction=float<cr>')
 teles = require("telescope.builtin")
-mapit('n', ',', ':lua teles.find_files()<cr>')
+mapit('n', '<leader>f', ':lua teles.find_files()<cr>')
 vim.cmd [[colo gruvbox]]
 require("lualine").setup{
 	options = { theme = 'gruvbox' }
