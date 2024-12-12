@@ -13,7 +13,7 @@ install-zsh:
 	cp ./zsh/.zshrc ~/.zshrc
 	@echo "Successfully installed zsh configuration!"
 
-install-zsh:
+install-tmux:
 	@echo "Installing new tmux configuration!"
 	cp ./tmux/.tmux.conf ~/.tmux.conf
 	@echo "Successfully installed tmux configuration!"
