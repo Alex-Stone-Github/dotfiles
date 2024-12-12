@@ -1,16 +1,23 @@
 .PHONY: install install-vim install-zsh install-alacritty install-nerdfont-proto
 
-install: install-vim install-zsh install-alacritty
+install: install-vim install-zsh install-alacritty install-tmux
 
 install-vim:
 	@echo "Installing new neovim configuration!"
 	-mkdir ../nvim
 	cp ./nvim/init.lua ../nvim/init.lua
 	@echo "Successfully installed neovim configuration!"
+
 install-zsh:
 	@echo "Installing new zsh configuration!"
 	cp ./zsh/.zshrc ~/.zshrc
 	@echo "Successfully installed zsh configuration!"
+
+install-zsh:
+	@echo "Installing new tmux configuration!"
+	cp ./tmux/.tmux.conf ~/.tmux.conf
+	@echo "Successfully installed tmux configuration!"
+
 install-alacritty: install-nerdfont-proto
 	@echo "Installing alacritty configuration!"
 	-mkdir ../alacritty
