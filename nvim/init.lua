@@ -47,6 +47,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		{"ellisonleao/gruvbox.nvim"},
+		{"sainnhe/gruvbox-material"},
 		{"nvim-telescope/telescope.nvim"},
 		{"akinsho/toggleterm.nvim", config = true},
 		{"neoclide/coc.nvim", branch="release"},
@@ -62,7 +63,7 @@ require("lazy").setup({
 mapit('n', '<leader>t', ':ToggleTerm direction=float<cr>')
 teles = require("telescope.builtin")
 mapit('n', '<leader>f', ':lua teles.find_files()<cr>')
-vim.cmd [[colo gruvbox]]
+vim.cmd [[colo gruvbox-material]]
 require("lualine").setup{
 	options = { theme = 'gruvbox' }
 }
