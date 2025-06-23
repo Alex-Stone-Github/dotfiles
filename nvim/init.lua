@@ -60,9 +60,9 @@ require("lazy").setup({
 })
 
 -- plugin config
-mapit('n', '<leader>t', ':ToggleTerm direction=float<cr>')
+mapit('n', '<C-t>', ':ToggleTerm direction=float<cr>')
 teles = require("telescope.builtin")
-mapit('n', '<leader>f', ':lua teles.find_files()<cr>')
+mapit('n', '<C-o>', ':lua teles.find_files()<cr>')
 vim.cmd [[colo gruvbox-material]]
 require("lualine").setup{
 	options = { theme = 'gruvbox' }
