@@ -5,7 +5,7 @@ install: install-vim install-zsh install-alacritty install-tmux
 install-vim:
 	@echo "Installing new neovim configuration!"
 	-mkdir ../nvim
-	cp ./nvim/init.lua ../nvim/init.lua
+	cp ./nvim/init.lua ~/.config/nvim/init.lua
 	@echo "Successfully installed neovim configuration!"
 
 install-zsh:
@@ -21,7 +21,7 @@ install-tmux:
 install-alacritty: install-nerdfont-proto
 	@echo "Installing alacritty configuration!"
 	-mkdir ../alacritty
-	cp alacritty/alacritty.toml ../alacritty/
+	cp alacritty/alacritty.toml ~/.config/alacritty/
 	@echo "Successfully alacritty configuration!"
 
 install-nerdfont-proto:
